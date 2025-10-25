@@ -10,6 +10,107 @@
 - **Server:** PHP Built-in Development Server
 - **Additional:** Composer (dependency management), Eloquent ORM
 
+## Встановлення Composer та Laravel
+
+### Встановлення Composer
+
+Composer - це менеджер залежностей для PHP, необхідний для роботи з Laravel.
+
+#### Windows
+
+1. Завантажте інсталятор Composer з офіційного сайту:
+   ```
+   https://getcomposer.org/Composer-Setup.exe
+   ```
+
+2. Запустіть інсталятор та слідуйте інструкціям
+3. Переконайтеся, що шлях до PHP вказаний правильно (наприклад, `C:\xampp\php\php.exe`)
+4. Після встановлення перевірте версію:
+   ```bash
+   composer --version
+   ```
+
+#### Linux/macOS
+
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+composer --version
+```
+
+### Встановлення Laravel
+
+Laravel встановлюється через Composer. Після встановлення Composer ви можете:
+
+1. **Встановити Laravel Installer глобально:**
+   ```bash
+   composer global require laravel/installer
+   ```
+
+2. **Створити новий Laravel проект:**
+   ```bash
+   laravel new назва-проекту
+   ```
+
+3. **Або створити проект через Composer:**
+   ```bash
+   composer create-project laravel/laravel назва-проекту
+   ```
+
+## Залежності проекту
+
+### Основні залежності (Production)
+
+Визначені в `composer.json` секції `require`:
+
+- **PHP:** `^8.2` - Мінімальна версія PHP 8.2
+- **laravel/framework:** `^12.0` - Головний фреймворк Laravel версії 12.x
+- **laravel/tinker:** `^2.10.1` - Інтерактивна консоль REPL для Laravel
+
+### Залежності для розробки (Development)
+
+Визначені в `composer.json` секції `require-dev`:
+
+- **fakerphp/faker:** `^1.23` - Генератор фейкових даних для тестування
+- **laravel/pail:** `^1.2.2` - Інструмент для перегляду логів у реальному часі
+- **laravel/pint:** `^1.24` - Інструмент для форматування PHP коду
+- **laravel/sail:** `^1.41` - Docker-середовище для Laravel
+- **mockery/mockery:** `^1.6` - Бібліотека для створення mock-об'єктів у тестах
+- **nunomaduro/collision:** `^8.6` - Красивий обробник помилок для командного рядка
+- **phpunit/phpunit:** `^11.5.3` - Фреймворк для unit-тестування
+
+### PHP Розширення
+
+Для роботи з PostgreSQL необхідні розширення:
+
+- `pdo` - PHP Data Objects
+- `pdo_pgsql` - PDO драйвер для PostgreSQL
+- `pgsql` - PostgreSQL функції
+
+### Команди Composer для встановлення залежностей
+
+```bash
+# Встановлення всіх залежностей (production + development)
+composer install
+
+# Встановлення тільки production залежностей
+composer install --no-dev
+
+# Оновлення всіх залежностей
+composer update
+
+# Оновлення конкретного пакета
+composer update laravel/framework
+
+# Перегляд списку встановлених пакетів
+composer show
+
+# Перегляд outdated пакетів
+composer outdated
+```
+
 ## Встановлення та налаштування
 
 ### Вимоги
