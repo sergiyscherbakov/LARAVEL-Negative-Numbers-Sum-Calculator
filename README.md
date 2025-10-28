@@ -264,3 +264,10 @@ negative-sum-calculator/
 ## Ліцензія
 
 Цей проект є навчальним та розповсюджується під ліцензією MIT.
+
+
+## Автор
+
+**Розробник:** Сергій Щербаков
+**Email:** sergiyscherbakov@ukr.net
+**Telegram:** @s_help_2010
